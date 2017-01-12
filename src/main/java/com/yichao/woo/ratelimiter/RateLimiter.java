@@ -58,7 +58,7 @@ public class RateLimiter {
                 tokenBucket.setLastRefillTime(refillTime);
                 assert currentTokensRemaining >= 0;
                 if (currentTokensRemaining == 0) {
-                    tokenBucket.setTokensRemaining(currentTokensRemaining);
+                    //tokenBucket.setTokensRemaining(currentTokensRemaining);
                     jedis.hmset(key, tokenBucket.toHash());
                     return false;
                 } else {
